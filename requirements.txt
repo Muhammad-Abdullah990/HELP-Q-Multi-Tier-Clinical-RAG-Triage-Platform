@@ -1,4 +1,5 @@
 python-dotenv
+google-genai
 fastapi
 uvicorn
 scikit-learn
@@ -6,3 +7,5 @@ pandas
 numpy
 joblib
 spacy
+httpx
+pydantic
