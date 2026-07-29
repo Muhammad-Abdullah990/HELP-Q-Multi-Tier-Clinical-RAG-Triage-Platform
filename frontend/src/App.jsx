@@ -1,10 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { 
   Activity, ShieldAlert, Cpu, Stethoscope, Sparkles, Send, RefreshCw, 
-  AlertTriangle, ChevronRight, User, Bot, HeartPulse
+  AlertTriangle, ChevronRight, User, Bot, HeartPulse, MessageSquare, Briefcase, Linkedin, Github, ExternalLink
 } from 'lucide-react';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://helpq-backend.onrender.com';
+
+// DEVELOPER SOCIAL & AUTHOR VERIFICATION LINKS
+const DEVELOPER_LINKS = {
+  whatsapp: 'https://wa.me/?text=Hi%20Muhammad%20Abdullah%2C%20I%20reviewed%20your%20H.E.L.P-Q%20AI%20Medical%20Platform',
+  upwork: 'https://www.upwork.com/freelancers/~015bf9ec6e1f0e2ec6', // Replace with your exact Upwork Profile URL if needed
+  linkedin: 'https://www.linkedin.com/in/muhammad-abdullah', // Replace with your exact LinkedIn Profile URL if needed
+  github: 'https://github.com/Muhammad-Abdullah990/HELP-Q-Multi-Tier-Clinical-RAG-Triage-Platform'
+};
 
 const TEST_PROMPTS = [
   {
@@ -115,28 +123,48 @@ export default function App() {
           </div>
         </div>
 
-        {/* TELEMETRY STATUS BAR */}
-        <div className="telemetry-bar">
-          <div className="telemetry-item">
-            <span className="status-dot"></span>
-            <span className="status-label">Gateway:</span>
-            <span className="status-val">ONLINE</span>
-          </div>
-          <div className="telemetry-item">
-            <span className="status-dot"></span>
-            <span className="status-label">Triage:</span>
-            <span className="status-val">NLP</span>
-          </div>
-          <div className="telemetry-item">
-            <span className="status-dot"></span>
-            <span className="status-label">Diagnosis:</span>
-            <span className="status-val">ML RF</span>
-          </div>
-          <div className="telemetry-item">
-            <span className="status-dot"></span>
-            <span className="status-label">Recs:</span>
-            <span className="status-val">CARE</span>
-          </div>
+        {/* DEVELOPER VERIFICATION & SOCIAL CONTACT BAR */}
+        <div className="developer-contact-bar">
+          <a 
+            href={DEVELOPER_LINKS.whatsapp} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="social-btn whatsapp"
+            title="Contact Developer on WhatsApp"
+          >
+            <MessageSquare size={14} />
+            <span>WhatsApp</span>
+          </a>
+          <a 
+            href={DEVELOPER_LINKS.upwork} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="social-btn upwork"
+            title="Hire Developer on Upwork"
+          >
+            <Briefcase size={14} />
+            <span>Upwork</span>
+          </a>
+          <a 
+            href={DEVELOPER_LINKS.linkedin} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="social-btn linkedin"
+            title="Verify Developer on LinkedIn"
+          >
+            <Linkedin size={14} />
+            <span>LinkedIn</span>
+          </a>
+          <a 
+            href={DEVELOPER_LINKS.github} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="social-btn github"
+            title="View Source on GitHub"
+          >
+            <Github size={14} />
+            <span>GitHub</span>
+          </a>
         </div>
       </header>
 
@@ -240,7 +268,7 @@ export default function App() {
           </form>
         </section>
 
-        {/* RIGHT PANEL: LIVE 4-LAYER TELEMETRY INSPECTOR */}
+        {/* RIGHT PANEL: LIVE 4-LAYER TELEMETRY INSPECTOR & AUTHOR VERIFICATION */}
         <section className="glass-panel telemetry-panel">
           <div className="telemetry-header">
             <h2 className="telemetry-title">
@@ -348,15 +376,37 @@ export default function App() {
                 <p style={{ color: 'var(--text-muted)', marginTop: '4px' }}>
                   Model: <span style={{ color: 'var(--accent-blue)' }}>{activeTelemetry.Layer_5_RAG_Synthesizer?.model}</span>
                 </p>
-                {activeTelemetry.Layer_5_RAG_Synthesizer?.status?.includes('ERROR') && (
-                  <p style={{ color: 'var(--accent-amber)', fontSize: '0.7rem', marginTop: '4px' }}>
-                    Note: Gemini API Quota Limit Exceeded (Engaged Clinical Template Fallback)
-                  </p>
-                )}
               </div>
 
             </div>
           )}
+
+          {/* DEVELOPER VERIFICATION & AUTHORSHIP FOOTER CARD */}
+          <div style={{ marginTop: 'auto', paddingTop: '16px', borderTop: '1px solid var(--border-glass)' }}>
+            <div style={{ background: 'rgba(15, 22, 38, 0.9)', border: '1px solid var(--border-glass)', borderRadius: '12px', padding: '14px' }}>
+              <p style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--accent-cyan)', marginBottom: '4px', display: 'flex', items: 'center', gap: '6px' }}>
+                <User size={14} />
+                Developed & Engineered By Muhammad Abdullah
+              </p>
+              <p style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginBottom: '10px' }}>
+                Full-Stack AI Microservices & MedTech RAG Architect. Verify authorship or contact for consulting below:
+              </p>
+              <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+                <a href={DEVELOPER_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className="social-btn whatsapp" style={{ fontSize: '0.7rem', padding: '4px 8px' }}>
+                  <MessageSquare size={12} /> WhatsApp
+                </a>
+                <a href={DEVELOPER_LINKS.upwork} target="_blank" rel="noopener noreferrer" className="social-btn upwork" style={{ fontSize: '0.7rem', padding: '4px 8px' }}>
+                  <Briefcase size={12} /> Upwork
+                </a>
+                <a href={DEVELOPER_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="social-btn linkedin" style={{ fontSize: '0.7rem', padding: '4px 8px' }}>
+                  <Linkedin size={12} /> LinkedIn
+                </a>
+                <a href={DEVELOPER_LINKS.github} target="_blank" rel="noopener noreferrer" className="social-btn github" style={{ fontSize: '0.7rem', padding: '4px 8px' }}>
+                  <Github size={12} /> Source Code
+                </a>
+              </div>
+            </div>
+          </div>
         </section>
 
       </main>

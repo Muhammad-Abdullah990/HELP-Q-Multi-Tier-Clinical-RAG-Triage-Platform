@@ -118,6 +118,71 @@ body {
   font-size: 0.75rem;
 }
 
+.developer-contact-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 1px solid var(--border-glass);
+  background: rgba(15, 22, 38, 0.8);
+}
+
+.social-btn:hover {
+  transform: translateY(-1px);
+}
+
+.social-btn.whatsapp {
+  color: #25d366;
+  border-color: rgba(37, 211, 102, 0.3);
+  background: rgba(37, 211, 102, 0.1);
+}
+.social-btn.whatsapp:hover {
+  background: rgba(37, 211, 102, 0.2);
+  box-shadow: 0 0 12px rgba(37, 211, 102, 0.3);
+}
+
+.social-btn.upwork {
+  color: #14a800;
+  border-color: rgba(20, 168, 0, 0.3);
+  background: rgba(20, 168, 0, 0.1);
+}
+.social-btn.upwork:hover {
+  background: rgba(20, 168, 0, 0.2);
+  box-shadow: 0 0 12px rgba(20, 168, 0, 0.3);
+}
+
+.social-btn.linkedin {
+  color: #0a66c2;
+  border-color: rgba(10, 102, 194, 0.3);
+  background: rgba(10, 102, 194, 0.1);
+}
+.social-btn.linkedin:hover {
+  background: rgba(10, 102, 194, 0.2);
+  box-shadow: 0 0 12px rgba(10, 102, 194, 0.3);
+}
+
+.social-btn.github {
+  color: #f0f6fc;
+  border-color: rgba(240, 246, 252, 0.2);
+  background: rgba(240, 246, 252, 0.08);
+}
+.social-btn.github:hover {
+  background: rgba(240, 246, 252, 0.18);
+  box-shadow: 0 0 12px rgba(240, 246, 252, 0.2);
+}
+
+
 .telemetry-item {
   display: flex;
   align-items: center;
