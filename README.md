@@ -1,84 +1,43 @@
-# 🧠 H.E.L.P-Q AI — Medical Triage & Disease Prediction Platform
+# 🏥 H.E.L.P-Q (Hospital Efficiency & Live Patient Queue)
+### Multi-Tier Clinical RAG Triage Platform & Intelligent Specialist Routing Engine
 
-> **Healthcare Expert Location & Patient-Triage Engine**  
-> *An Enterprise-grade, 5-Tier Microservice Platform combining spaCy NLP, RandomForest Machine Learning, and Google Gemini RAG (Retrieval-Augmented Generation).*
-
----
-
-## 🌟 Key Architecture & Features
-
-```
-[Patient Query] ──► [Layer 1: Gateway Firewall] (Sub-5ms Emergency Escalation)
-                            │
-              ┌─────────────┴─────────────┐
-              ▼                           ▼
-    [Emergency ER Warning]      [Layer 2: spaCy NLP Triage] (Token & POS Extraction)
-                                          │
-                                          ▼
-                                [Layer 3: RandomForest ML] (131 Binary Feature Matrix)
-                                          │
-                                          ▼
-                                [Layer 4: Recommendation Engine] (Specialist Doctor Routing)
-                                          │
-                                          ▼
-                                [Layer 5: Gemini RAG Synthesizer] (Context Augmentation)
-```
-
-- **Layer 1 (Gateway & Safety Firewall)**: Zero-latency keyword detection for critical life safety (e.g., chest pain, breathing distress).
-- **Layer 2 (spaCy NLP Triage)**: POS tag extraction filtering `NOUN` & `ADJ` clinical symptom tokens.
-- **Layer 3 (Machine Learning Diagnosis)**: Multi-class `RandomForestClassifier` trained on 4,920 records across 131 symptom dimensions.
-- **Layer 4 (Specialist & Care Router)**: Maps predicted diseases to 41 specialist doctor categories with 4-step care precautions.
-- **Layer 5 (Gemini RAG Engine)**: Context-augmented LLM response synthesis with negation awareness and clinical disclaimers.
-- **HCI React Dashboard**: Dark mode glassmorphic UI with real-time 4-Layer Architecture Inspector & Telemetry.
+> **Architected & Engineered by [Engr. Muhammad Abdullah](https://github.com/Muhammad-Abdullah990)**  
+> 🔗 **Live Web Demo**: [https://help-q-multi-tier-clinical-rag-tria.vercel.app/](https://help-q-multi-tier-clinical-rag-tria.vercel.app/)  
+> ⚙️ **Backend Microservice Gateway**: [https://helpq-backend.onrender.com/](https://helpq-backend.onrender.com/)
 
 ---
 
-## 📁 Repository Structure
+## 🌟 Executive Summary
 
-```
-helpq-ai-system/
-├── chat-service/           # Layer 1 Gateway & Main API Orchestrator
-├── triage-service/         # Layer 2 spaCy NLP Symptom Extractor
-├── diagnosis-service/      # Layer 3 RandomForest ML Engine (model.pkl)
-├── recommendation-service/# Layer 4 Specialist & Care Precautions Router
-├── shared/                 # Layer 5 Gemini RAG Synthesizer & Utils
-├── datasets/               # Clinical datasets (Symptoms, Severity, Precautions)
-├── frontend/               # React (Vite) HCI Glassmorphism Dashboard
-├── production_app.py       # Unified Production Microservice Entrypoint
-├── requirements.txt        # Backend dependencies
-└── Procfile                # Render / Production deployment config
-```
+**H.E.L.P-Q (Hospital Efficiency & Live Patient Queue)** is a production-grade 5-tier clinical decision support system designed to streamline patient intake, triage emergency symptoms, predict underlying medical conditions, and route patients to the correct specialist physician with zero latency.
+
+It combines **spaCy NLP** POS token extraction, **Scikit-Learn RandomForest** machine learning models, **Google Gemini RAG** synthesis, and a modern glassmorphic HCI React frontend.
 
 ---
 
-## 🚀 Local Development Setup
+## 📐 5-Layer Microservice Architecture
 
-### 1. Backend Microservices
-```bash
-# Activate Virtual Environment
-.venv\Scripts\activate
-
-# Install Dependencies
-pip install -r requirements.txt
-python -m spacy download en_core_web_sm
-
-# Launch Unified Backend
-uvicorn production_app:app --reload --port 8000
-```
-
-### 2. React Frontend
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-Visit the HCI Dashboard at **`http://localhost:5173`**.
+| Layer | Service Name | Tech Stack | Role & Responsibility |
+| :--- | :--- | :--- | :--- |
+| **Layer 1** | **Gateway Firewall** | FastAPI / Python | Sub-1ms emergency keyword detection & zero-latency ER escalation |
+| **Layer 2** | **NLP Triage Module** | spaCy NLP Pipeline | POS token extraction, lemmatization, & symptom vectorization |
+| **Layer 3** | **Diagnostic Engine** | Scikit-Learn RandomForest | Machine Learning classification on clinical disease datasets |
+| **Layer 4** | **Recommendation Engine** | Pandas / CSV DB | Automated specialist doctor routing & actionable care precautions |
+| **Layer 5** | **Gemini RAG Synthesizer** | Google Gemini API (GenAI) | Context-augmented clinical response synthesis with 429 fallback |
 
 ---
 
-## 🔒 Copyright & Intellectual Property
+## 👨‍💻 Developer & Attribution
 
-**Copyright (c) 2026. All Rights Reserved.**
+* **Architect & Sole Developer**: Engr. Muhammad Abdullah
+* **WhatsApp**: [Chat on WhatsApp](https://wa.me/923196387153)
+* **Upwork**: [Hire on Upwork](https://www.upwork.com/freelancers/~01e0d1acd3e98b3d1f?mp_source=share)
+* **LinkedIn**: [Connect on LinkedIn](https://www.linkedin.com/in/eng-mohammad-abdullah/)
+* **GitHub**: [GitHub Profile](https://github.com/Muhammad-Abdullah990)
 
-This repository and its source code are published for portfolio demonstration and educational review purposes only. **No permission is granted** for commercial reproduction, distribution, modification, or re-use without explicit written consent from the author.
+---
+
+## 📜 Copyright & Licensing
+
+**Copyright (c) 2026 Engr. Muhammad Abdullah. All Rights Reserved.**  
+Licensed under the GNU General Public License v3.0 (GPL-3.0). Free for educational and open-source demonstration. Commercial reuse requires explicit authorization from the author.

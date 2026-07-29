@@ -49,7 +49,7 @@ export default function App() {
   const [messages, setMessages] = useState([
     {
       sender: 'bot',
-      text: 'Hello! I am the H.E.L.P-Q Clinical AI Engine engineered by Engr. Muhammad Abdullah. Powered by Gemini RAG and a 4-Layer Microservice Architecture. How can I assist with your health concerns today?',
+      text: 'Hello! I am the H.E.L.P-Q (Hospital Efficiency & Live Patient Queue) Clinical AI Engine engineered by Engr. Muhammad Abdullah. Powered by Gemini RAG and a 4-Layer Microservice Architecture. How can I assist with your health concerns today?',
       trace: null
     }
   ]);
@@ -131,7 +131,7 @@ export default function App() {
             <h1 className="brand-title">
               H.E.L.P-Q <span className="badge-rag">GEMINI RAG ENGINE</span>
             </h1>
-            <p className="brand-subtitle">Healthcare Expert Location & Patient-Triage Architecture</p>
+            <p className="brand-subtitle">Hospital Efficiency & Live Patient Queue</p>
           </div>
         </div>
 
@@ -409,7 +409,7 @@ export default function App() {
               <p style={{ fontWeight: 700, color: 'var(--text-main)', display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '4px' }}>
                 <CheckCircle2 size={16} color="var(--accent-emerald)" /> Verified Sole Author & Architect
               </p>
-              <p>Designed, engineered, and deployed the complete 5-tier H.E.L.P-Q clinical decision platform combining spaCy NLP, RandomForest ML, and Gemini RAG synthesis.</p>
+              <p>Designed, engineered, and deployed the complete 5-tier H.E.L.P-Q (Hospital Efficiency & Live Patient Queue) clinical decision platform combining spaCy NLP, RandomForest ML, and Gemini RAG synthesis.</p>
             </div>
 
             <div className="dev-modal-actions">

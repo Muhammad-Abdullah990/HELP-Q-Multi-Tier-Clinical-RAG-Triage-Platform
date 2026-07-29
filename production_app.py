@@ -22,7 +22,7 @@ diagnosis_mod = load_module("diagnosis_mod", os.path.join(os.path.dirname(__file
 recommendation_mod = load_module("recommendation_mod", os.path.join(os.path.dirname(__file__), "recommendation-service", "app.py"))
 
 app = FastAPI(
-    title="H.E.L.P-Q Unified Production Microservice Platform",
+    title="H.E.L.P-Q (Hospital Efficiency & Live Patient Queue)",
     version="1.0.0"
 )
 
@@ -44,7 +44,7 @@ app.mount("/service/recommendation", recommendation_mod.app)
 @app.get("/")
 async def root():
     return {
-        "system": "H.E.L.P-Q Unified Production Microservice Platform",
+        "system": "H.E.L.P-Q (Hospital Efficiency & Live Patient Queue)",
         "developer": "Engr. Muhammad Abdullah",
         "status": "Operational",
         "profiles": {
@@ -68,6 +68,7 @@ async def get_developer_info():
     return {
         "developer": "Engr. Muhammad Abdullah",
         "title": "Lead AI & Microservices Architect",
+        "system": "H.E.L.P-Q (Hospital Efficiency & Live Patient Queue)",
         "verification": "Verified Sole Author & Architect of H.E.L.P-Q Engine",
         "profiles": {
             "github": "https://github.com/Muhammad-Abdullah990",
@@ -101,7 +102,7 @@ async def chat_production(user_query: str):
     support_keywords = ["how does", "system work", "who built", "what model"]
     if chat_mod.contains_word(q_lower, support_keywords):
         return {
-            "reply": "I am the H.E.L.P-Q Engine engineered by Engr. Muhammad Abdullah. I process symptoms through spaCy NLP triage, Random Forest ML prediction, and Gemini RAG synthesis to route you to the correct specialist.",
+            "reply": "I am the H.E.L.P-Q (Hospital Efficiency & Live Patient Queue) Engine engineered by Engr. Muhammad Abdullah. I process symptoms through spaCy NLP triage, Random Forest ML prediction, and Gemini RAG synthesis to route you to the correct specialist.",
             "recommended_doctor": "System Support",
             "architecture_trace": {
                 "Layer_1_Gateway_Firewall": {"port": 8000, "status": "SUPPORT_MODE", "action": "System Information"},
@@ -112,6 +113,7 @@ async def chat_production(user_query: str):
             },
             "details": {
                 "developer": "Engr. Muhammad Abdullah",
+                "system": "H.E.L.P-Q (Hospital Efficiency & Live Patient Queue)",
                 "status": "Operational"
             }
         }
