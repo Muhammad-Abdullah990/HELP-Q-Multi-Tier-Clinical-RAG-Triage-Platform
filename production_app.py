@@ -45,9 +45,10 @@ app.mount("/service/recommendation", recommendation_mod.app)
 async def root():
     return {
         "system": "H.E.L.P-Q Unified Production Microservice Platform",
-        "developer": "Eng. Mohammad Abdullah",
+        "developer": "Engr. Muhammad Abdullah",
         "status": "Operational",
         "profiles": {
+            "github": "https://github.com/Muhammad-Abdullah990",
             "linkedin": "https://www.linkedin.com/in/eng-mohammad-abdullah/",
             "whatsapp": "https://wa.me/923196387153",
             "upwork": "https://www.upwork.com/freelancers/~01e0d1acd3e98b3d1f?mp_source=share"
@@ -65,10 +66,11 @@ async def root():
 @app.get("/author")
 async def get_developer_info():
     return {
-        "developer": "Eng. Mohammad Abdullah",
+        "developer": "Engr. Muhammad Abdullah",
         "title": "Lead AI & Microservices Architect",
         "verification": "Verified Sole Author & Architect of H.E.L.P-Q Engine",
         "profiles": {
+            "github": "https://github.com/Muhammad-Abdullah990",
             "linkedin": "https://www.linkedin.com/in/eng-mohammad-abdullah/",
             "whatsapp": "https://wa.me/923196387153",
             "upwork": "https://www.upwork.com/freelancers/~01e0d1acd3e98b3d1f?mp_source=share"
@@ -99,7 +101,7 @@ async def chat_production(user_query: str):
     support_keywords = ["how does", "system work", "who built", "what model"]
     if chat_mod.contains_word(q_lower, support_keywords):
         return {
-            "reply": "I am the H.E.L.P-Q Engine engineered by Eng. Mohammad Abdullah. I process symptoms through spaCy NLP triage, Random Forest ML prediction, and Gemini RAG synthesis to route you to the correct specialist.",
+            "reply": "I am the H.E.L.P-Q Engine engineered by Engr. Muhammad Abdullah. I process symptoms through spaCy NLP triage, Random Forest ML prediction, and Gemini RAG synthesis to route you to the correct specialist.",
             "recommended_doctor": "System Support",
             "architecture_trace": {
                 "Layer_1_Gateway_Firewall": {"port": 8000, "status": "SUPPORT_MODE", "action": "System Information"},
@@ -109,7 +111,7 @@ async def chat_production(user_query: str):
                 "Layer_5_RAG_Synthesizer": {"status": "NOT_NEEDED"}
             },
             "details": {
-                "developer": "Eng. Mohammad Abdullah",
+                "developer": "Engr. Muhammad Abdullah",
                 "status": "Operational"
             }
         }

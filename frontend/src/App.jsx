@@ -2,14 +2,15 @@ import React, { useState, useEffect, useRef } from 'react';
 import { 
   Activity, ShieldAlert, Cpu, Stethoscope, Sparkles, Send, RefreshCw, 
   AlertTriangle, ChevronRight, User, Bot, HeartPulse, Sun, Moon, 
-  MessageSquare, Briefcase, CheckCircle2, ExternalLink, X, Code2, Globe
+  MessageSquare, Briefcase, CheckCircle2, ExternalLink, X, Code2, Globe, GitBranch
 } from 'lucide-react';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://helpq-backend.onrender.com';
 
 const PROFILES = {
-  name: 'Eng. Mohammad Abdullah',
+  name: 'Engr. Mohammad Abdullah',
   title: 'Lead AI & Microservices Architect',
+  github: 'https://github.com/Muhammad-Abdullah990',
   linkedin: 'https://www.linkedin.com/in/eng-mohammad-abdullah/',
   whatsapp: 'https://wa.me/923196387153',
   upwork: 'https://www.upwork.com/freelancers/~01e0d1acd3e98b3d1f?mp_source=share'
@@ -48,7 +49,7 @@ export default function App() {
   const [messages, setMessages] = useState([
     {
       sender: 'bot',
-      text: 'Hello! I am the H.E.L.P-Q Clinical AI Engine engineered by Eng. Mohammad Abdullah. Powered by Gemini RAG and a 4-Layer Microservice Architecture. How can I assist with your health concerns today?',
+      text: 'Hello! I am the H.E.L.P-Q Clinical AI Engine engineered by Engr. Mohammad Abdullah. Powered by Gemini RAG and a 4-Layer Microservice Architecture. How can I assist with your health concerns today?',
       trace: null
     }
   ]);
@@ -138,8 +139,13 @@ export default function App() {
         <div className="header-actions">
           <button onClick={() => setShowDevModal(true)} className="dev-profile-btn">
             <Code2 size={15} />
-            <span>Eng. Mohammad Abdullah</span>
+            <span>Engr. Mohammad Abdullah</span>
           </button>
+
+          <a href={PROFILES.github} target="_blank" rel="noopener noreferrer" className="social-nav-link github" title="GitHub Repository">
+            <GitBranch size={14} />
+            <span>GitHub</span>
+          </a>
 
           <a href={PROFILES.whatsapp} target="_blank" rel="noopener noreferrer" className="social-nav-link whatsapp" title="Chat on WhatsApp">
             <MessageSquare size={14} />
@@ -400,13 +406,19 @@ export default function App() {
             </p>
 
             <div style={{ margin: '16px 0', padding: '12px', borderRadius: '12px', background: 'rgba(0,242,254,0.06)', border: '1px solid var(--border-glow)', fontSize: '0.8rem', color: 'var(--text-muted)', textAlign: 'left' }}>
-              <p style={{ fontWeight: 700, color: 'var(--text-main)', display: 'flex', items: 'center', gap: '6px', marginBottom: '4px' }}>
+              <p style={{ fontWeight: 700, color: 'var(--text-main)', display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '4px' }}>
                 <CheckCircle2 size={16} color="var(--accent-emerald)" /> Verified Sole Author & Architect
               </p>
               <p>Designed, engineered, and deployed the complete 5-tier H.E.L.P-Q clinical decision platform combining spaCy NLP, RandomForest ML, and Gemini RAG synthesis.</p>
             </div>
 
             <div className="dev-modal-actions">
+              <a href={PROFILES.github} target="_blank" rel="noopener noreferrer" className="dev-action-btn github">
+                <GitBranch size={18} />
+                <span>GitHub Repository</span>
+                <ExternalLink size={14} style={{ marginLeft: 'auto' }} />
+              </a>
+
               <a href={PROFILES.whatsapp} target="_blank" rel="noopener noreferrer" className="dev-action-btn whatsapp">
                 <MessageSquare size={18} />
                 <span>Contact on WhatsApp</span>

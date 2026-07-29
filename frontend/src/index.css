@@ -139,7 +139,7 @@ body {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .dev-profile-btn {
@@ -173,6 +173,12 @@ body {
   text-decoration: none;
   transition: all 0.2s ease;
   border: 1px solid var(--border-glass);
+}
+
+.social-nav-link.github {
+  background: rgba(157, 78, 221, 0.12);
+  color: var(--accent-purple);
+  border-color: rgba(157, 78, 221, 0.3);
 }
 
 .social-nav-link.linkedin {
@@ -595,6 +601,12 @@ body {
   font-weight: 700;
   text-decoration: none;
   transition: all 0.2s ease;
+}
+
+.dev-action-btn.github {
+  background: #24292e;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .dev-action-btn.whatsapp {
