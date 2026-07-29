@@ -45,7 +45,13 @@ app.mount("/service/recommendation", recommendation_mod.app)
 async def root():
     return {
         "system": "H.E.L.P-Q Unified Production Microservice Platform",
+        "developer": "Eng. Mohammad Abdullah",
         "status": "Operational",
+        "profiles": {
+            "linkedin": "https://www.linkedin.com/in/eng-mohammad-abdullah/",
+            "whatsapp": "https://wa.me/923196387153",
+            "upwork": "https://www.upwork.com/freelancers/~01e0d1acd3e98b3d1f?mp_source=share"
+        },
         "services": {
             "gateway": "/gateway/chat",
             "triage": "/service/triage/triage",
@@ -53,6 +59,20 @@ async def root():
             "recommendation": "/service/recommendation/recommend/{disease}"
         },
         "docs": "/docs"
+    }
+
+@app.get("/developer")
+@app.get("/author")
+async def get_developer_info():
+    return {
+        "developer": "Eng. Mohammad Abdullah",
+        "title": "Lead AI & Microservices Architect",
+        "verification": "Verified Sole Author & Architect of H.E.L.P-Q Engine",
+        "profiles": {
+            "linkedin": "https://www.linkedin.com/in/eng-mohammad-abdullah/",
+            "whatsapp": "https://wa.me/923196387153",
+            "upwork": "https://www.upwork.com/freelancers/~01e0d1acd3e98b3d1f?mp_source=share"
+        }
     }
 
 # Optimized In-Process Production Pipeline (Zero-Latency, No HTTP Deadlocks on Render!)
@@ -79,7 +99,7 @@ async def chat_production(user_query: str):
     support_keywords = ["how does", "system work", "who built", "what model"]
     if chat_mod.contains_word(q_lower, support_keywords):
         return {
-            "reply": "I am the H.E.L.P-Q Engine. I process symptoms through a spaCy NLP triage, Random Forest ML model, and Gemini RAG synthesizer to route you to the correct specialist.",
+            "reply": "I am the H.E.L.P-Q Engine engineered by Eng. Mohammad Abdullah. I process symptoms through spaCy NLP triage, Random Forest ML prediction, and Gemini RAG synthesis to route you to the correct specialist.",
             "recommended_doctor": "System Support",
             "architecture_trace": {
                 "Layer_1_Gateway_Firewall": {"port": 8000, "status": "SUPPORT_MODE", "action": "System Information"},
@@ -88,7 +108,10 @@ async def chat_production(user_query: str):
                 "Layer_4_Recommendation_Service": {"port": 8003, "status": "NOT_NEEDED"},
                 "Layer_5_RAG_Synthesizer": {"status": "NOT_NEEDED"}
             },
-            "details": {"status": "Operational"}
+            "details": {
+                "developer": "Eng. Mohammad Abdullah",
+                "status": "Operational"
+            }
         }
 
     # In-Process Microservice Pipeline Execution

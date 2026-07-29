@@ -5,18 +5,6 @@
 
 ---
 
-## 👨‍💻 Developer & Authorship Verification
-
-**Developed & Engineered by:** **Muhammad Abdullah**  
-*Full-Stack AI Microservices & MedTech RAG Architect*
-
-[![WhatsApp](https://img.shields.io/badge/WhatsApp-Contact_Developer-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/?text=Hi%20Muhammad%20Abdullah%2C%20I%20reviewed%20your%20H.E.L.P-Q%20AI%20Medical%20Platform)
-[![Upwork](https://img.shields.io/badge/Upwork-Hire_on_Upwork-14A800?style=for-the-badge&logo=upwork&logoColor=white)](https://www.upwork.com/freelancers/~015bf9ec6e1f0e2ec6)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect_on_LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/muhammad-abdullah)
-[![GitHub](https://img.shields.io/badge/GitHub-View_Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Muhammad-Abdullah990/HELP-Q-Multi-Tier-Clinical-RAG-Triage-Platform)
-
----
-
 ## 🌟 Key Architecture & Features
 
 ```
@@ -63,8 +51,34 @@ helpq-ai-system/
 
 ---
 
+## 🚀 Local Development Setup
+
+### 1. Backend Microservices
+```bash
+# Activate Virtual Environment
+.venv\Scripts\activate
+
+# Install Dependencies
+pip install -r requirements.txt
+python -m spacy download en_core_web_sm
+
+# Launch Unified Backend
+uvicorn production_app:app --reload --port 8000
+```
+
+### 2. React Frontend
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Visit the HCI Dashboard at **`http://localhost:5173`**.
+
+---
+
 ## 🔒 Copyright & Intellectual Property
 
-**Copyright (c) 2026 Muhammad Abdullah. All Rights Reserved.**
+**Copyright (c) 2026. All Rights Reserved.**
 
-This repository and its source code are published for portfolio demonstration and author verification purposes. **No permission is granted** for commercial reproduction, distribution, modification, or re-use without explicit written consent from the author.
+This repository and its source code are published for portfolio demonstration and educational review purposes only. **No permission is granted** for commercial reproduction, distribution, modification, or re-use without explicit written consent from the author.
