@@ -142,11 +142,6 @@ export default function App() {
             <span>Engr. Muhammad Abdullah</span>
           </button>
 
-          <a href={PROFILES.github} target="_blank" rel="noopener noreferrer" className="social-nav-link github" title="GitHub Repository">
-            <GitBranch size={14} />
-            <span>GitHub</span>
-          </a>
-
           <a href={PROFILES.whatsapp} target="_blank" rel="noopener noreferrer" className="social-nav-link whatsapp" title="Chat on WhatsApp">
             <MessageSquare size={14} />
             <span>WhatsApp</span>
@@ -160,6 +155,11 @@ export default function App() {
           <a href={PROFILES.linkedin} target="_blank" rel="noopener noreferrer" className="social-nav-link linkedin" title="LinkedIn Profile">
             <Globe size={14} />
             <span>LinkedIn</span>
+          </a>
+
+          <a href={PROFILES.github} target="_blank" rel="noopener noreferrer" className="social-nav-link github" title="GitHub Repository">
+            <GitBranch size={14} />
+            <span>GitHub</span>
           </a>
 
           {/* THEME TOGGLE BUTTON */}
@@ -413,12 +413,6 @@ export default function App() {
             </div>
 
             <div className="dev-modal-actions">
-              <a href={PROFILES.github} target="_blank" rel="noopener noreferrer" className="dev-action-btn github">
-                <GitBranch size={18} />
-                <span>GitHub Repository</span>
-                <ExternalLink size={14} style={{ marginLeft: 'auto' }} />
-              </a>
-
               <a href={PROFILES.whatsapp} target="_blank" rel="noopener noreferrer" className="dev-action-btn whatsapp">
                 <MessageSquare size={18} />
                 <span>Contact on WhatsApp</span>
@@ -434,6 +428,12 @@ export default function App() {
               <a href={PROFILES.linkedin} target="_blank" rel="noopener noreferrer" className="dev-action-btn linkedin">
                 <Globe size={18} />
                 <span>Connect on LinkedIn</span>
+                <ExternalLink size={14} style={{ marginLeft: 'auto' }} />
+              </a>
+
+              <a href={PROFILES.github} target="_blank" rel="noopener noreferrer" className="dev-action-btn github">
+                <GitBranch size={18} />
+                <span>GitHub Repository</span>
                 <ExternalLink size={14} style={{ marginLeft: 'auto' }} />
               </a>
             </div>
