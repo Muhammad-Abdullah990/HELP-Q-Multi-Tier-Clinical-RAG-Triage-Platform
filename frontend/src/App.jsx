@@ -4,7 +4,7 @@ import {
   AlertTriangle, ChevronRight, User, Bot, HeartPulse
 } from 'lucide-react';
 
-const API_BASE_URL = 'http://127.0.0.1:8000';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://helpq-backend.onrender.com';
 
 const TEST_PROMPTS = [
   {
@@ -90,7 +90,7 @@ export default function App() {
         ...prev,
         {
           sender: 'bot',
-          text: '⚠️ Connection failure to H.E.L.P-Q Gateway. Please verify microservices are active on ports 8000-8003.',
+          text: '⚠️ Connection failure to H.E.L.P-Q Backend. If the server was sleeping (Render Free Tier), please retry in 30 seconds while it completes cold start.',
           trace: null
         }
       ]);
@@ -119,22 +119,22 @@ export default function App() {
         <div className="telemetry-bar">
           <div className="telemetry-item">
             <span className="status-dot"></span>
-            <span className="status-label">8000 Gateway:</span>
+            <span className="status-label">Gateway:</span>
             <span className="status-val">ONLINE</span>
           </div>
           <div className="telemetry-item">
             <span className="status-dot"></span>
-            <span className="status-label">8001 Triage:</span>
+            <span className="status-label">Triage:</span>
             <span className="status-val">NLP</span>
           </div>
           <div className="telemetry-item">
             <span className="status-dot"></span>
-            <span className="status-label">8002 Diagnosis:</span>
+            <span className="status-label">Diagnosis:</span>
             <span className="status-val">ML RF</span>
           </div>
           <div className="telemetry-item">
             <span className="status-dot"></span>
-            <span className="status-label">8003 Recs:</span>
+            <span className="status-label">Recs:</span>
             <span className="status-val">CARE</span>
           </div>
         </div>
@@ -177,7 +177,7 @@ export default function App() {
                   {/* DOCTOR BADGE */}
                   {msg.recommended_doctor && (
                     <div className="doc-badge">
-                      <span style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                      <span style={{ color: 'var(--text-muted)', display: 'flex', items: 'center', gap: '6px' }}>
                         <Stethoscope size={14} color="var(--accent-cyan)" />
                         Recommended Doctor:
                       </span>
@@ -216,7 +216,7 @@ export default function App() {
                 </div>
                 <div className="message-card bot" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--accent-cyan)', fontSize: '0.85rem' }}>
                   <Sparkles size={16} />
-                  <span>Processing through 4 Microservices & Gemini RAG Synthesizer...</span>
+                  <span>Processing through Microservice Pipeline & Gemini RAG Synthesizer...</span>
                 </div>
               </div>
             )}
@@ -274,7 +274,7 @@ export default function App() {
                   </span>
                 </div>
                 <p style={{ color: 'var(--text-muted)' }}>
-                  Port 8000 | Status: {activeTelemetry.Layer_1_Gateway_Firewall?.reason || activeTelemetry.Layer_1_Gateway_Firewall?.status}
+                  Status: {activeTelemetry.Layer_1_Gateway_Firewall?.reason || activeTelemetry.Layer_1_Gateway_Firewall?.status}
                 </p>
               </div>
 

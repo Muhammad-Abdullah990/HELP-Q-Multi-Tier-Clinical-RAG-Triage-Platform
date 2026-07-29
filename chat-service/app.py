@@ -20,12 +20,16 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Configurable Service URLs (Supports local microservices & unified production deployment)
+TRIAGE_URL = os.getenv("TRIAGE_URL", "http://localhost:8001/triage")
+DIAGNOSIS_URL = os.getenv("DIAGNOSIS_URL", "http://localhost:8002/diagnose")
+RECOMMENDATION_URL = os.getenv("RECOMMENDATION_URL", "http://localhost:8003/recommend")
+
 # Global Session Memory
 chat_memory = []
 
 def contains_word(text: str, keywords: list) -> bool:
     for kw in keywords:
-        # Match whole word boundaries (e.g. 'how' matches 'how' but NOT 'shower')
         pattern = r'\b' + re.escape(kw) + r'\b'
         if re.search(pattern, text, re.IGNORECASE):
             return True
@@ -79,10 +83,10 @@ async def chat(user_query: str):
         }
 
     # --- LAYER 2, 3, 4, 5: TRIAGE, DIAGNOSIS, RECOMMENDATION & GEMINI RAG SYNTHESIS ---
-    async with httpx.AsyncClient(timeout=10.0) as client:
+    async with httpx.AsyncClient(timeout=15.0) as client:
         try:
             # Step 1: Triage (Layer 2)
-            t_res = await client.post("http://localhost:8001/triage", params={"text": user_query})
+            t_res = await client.post(TRIAGE_URL, params={"text": user_query})
             triage_data = t_res.json()
             symptoms = triage_data.get('symptoms', [])
 
@@ -100,12 +104,13 @@ async def chat(user_query: str):
                 }
 
             # Step 2: Diagnosis (Layer 3)
-            d_res = await client.post("http://localhost:8002/diagnose", json={"symptoms": symptoms})
+            d_res = await client.post(DIAGNOSIS_URL, json={"symptoms": symptoms})
             diagnosis_data = d_res.json()
             disease = diagnosis_data.get('disease', 'Unknown Condition')
             
             # Step 3: Recommendation (Layer 4)
-            r_res = await client.get(f"http://localhost:8003/recommend/{disease}")
+            rec_url = f"{RECOMMENDATION_URL}/{disease}" if not RECOMMENDATION_URL.endswith(f"/{disease}") else RECOMMENDATION_URL
+            r_res = await client.get(rec_url)
             rec_data = r_res.json()
 
             # Step 4: Gemini RAG Synthesis (Layer 5)
