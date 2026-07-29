@@ -8,7 +8,7 @@ import {
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://helpq-backend.onrender.com';
 
 const PROFILES = {
-  name: 'Engr.Muhammad Abdullah',
+  name: 'Engr. Muhammad Abdullah',
   title: 'Lead AI & Microservices Architect',
   github: 'https://github.com/Muhammad-Abdullah990',
   linkedin: 'https://www.linkedin.com/in/eng-mohammad-abdullah/',
@@ -49,7 +49,7 @@ export default function App() {
   const [messages, setMessages] = useState([
     {
       sender: 'bot',
-      text: 'Hello! I am the H.E.L.P-Q Clinical AI Engine engineered by Engr.Muhammad Abdullah. Powered by Gemini RAG and a 4-Layer Microservice Architecture. How can I assist with your health concerns today?',
+      text: 'Hello! I am the H.E.L.P-Q Clinical AI Engine engineered by Engr. Muhammad Abdullah. Powered by Gemini RAG and a 4-Layer Microservice Architecture. How can I assist with your health concerns today?',
       trace: null
     }
   ]);
@@ -139,7 +139,7 @@ export default function App() {
         <div className="header-actions">
           <button onClick={() => setShowDevModal(true)} className="dev-profile-btn">
             <Code2 size={15} />
-            <span>Engr.Muhammad Abdullah</span>
+            <span>Engr. Muhammad Abdullah</span>
           </button>
 
           <a href={PROFILES.github} target="_blank" rel="noopener noreferrer" className="social-nav-link github" title="GitHub Repository">
